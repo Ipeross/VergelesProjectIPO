@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "541492823909",
+    "project_id": "vergelesproject",
+    "storage_bucket": "vergelesproject.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541492823909:android:db08d098b1c1c2c82b438c",
+        "android_client_info": {
+          "package_name": "com.vergelesprojectunchained"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZpzYI05ui9J8dlHvUrA5CUcFkkfAc6QQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
