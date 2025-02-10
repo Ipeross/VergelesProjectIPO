@@ -1,13 +1,16 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card } from 'react-native-paper';
-import { useStudent } from '../hooks/useStudent';
 import { HttpError } from '../services/ApiService';
-import { usePc } from '../hooks/usePc';
+import { useStore } from '../store/store';
 
 export default function HomeScreen() {
-  const { students } = useStudent();
-  const { pcs } = usePc();
+  const { students, pcs, loadStudents, loadPcs } = useStore();
+
+  useEffect(() => {
+    loadStudents();
+    loadPcs();
+  }, []);
 
   return (
     <View>

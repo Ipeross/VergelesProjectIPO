@@ -1,11 +1,30 @@
-import { create } from 'zustand'
+import { create } from "zustand";
+import { Student } from "../entities/StudentEntity";
+import { ApiService } from "../services/ApiService";
+import { Pc } from "../entities/PcEntity";
 
 type Store = {
-  count: number
-  inc: () => void
-}
+  students: Student[];
+  pcs: Pc[];
+  loadStudents: () => Promise<void>;
+  loadPcs: () => Promise<void>;
+};
 
-const useStore = create<Store>()((set) => ({
-  count: 1,
-  inc: () => set((state) => ({ count: state.count + 1 })),
-}))
+export const useStore = create<Store>((set) => ({
+  students: [],
+  pcs: [],
+
+  loadStudents: async () => {
+    const response = await ApiService.getStudents();
+    if (Array.isArray(response)) {
+      set({ students: response });
+    }
+  },
+
+  loadPcs: async () => {
+    const response = await ApiService.getPcs();
+    if (Array.isArray(response)) {
+      set({ pcs: response });
+    }
+  }
+}));
