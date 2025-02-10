@@ -9,7 +9,7 @@ export class HttpError {
 }
 
 export class ApiService {
-    private static BASE_URL = "http://192.168.1.137:3000";
+    private static BASE_URL = "http://10.208.3.1:3000";
 
     static async getStudents(): Promise<Student[] | HttpError> {
         try {

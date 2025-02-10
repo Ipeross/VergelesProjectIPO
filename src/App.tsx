@@ -8,13 +8,15 @@ const Tab = createBottomTabNavigator();
 
 function App() {
     return (
-        <NavigationContainer>
-            <Tab.Navigator>
-                <Tab.Screen name="Home" component={HomeScreen} />
-                <Tab.Screen name="Class" component={ClassLayout} />
-                <Tab.Screen name="Performance" component={PerformanceChart} />
-            </Tab.Navigator>
-        </NavigationContainer>
+
+            <NavigationContainer>
+                <Tab.Navigator>
+                    <Tab.Screen name="Home" component={HomeScreen} />
+                    <Tab.Screen name="Class" component={ClassLayout} />
+                    <Tab.Screen name="Performance" component={PerformanceChart} />
+                </Tab.Navigator>
+            </NavigationContainer>
+
     );
 }
 
