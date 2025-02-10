@@ -2,7 +2,8 @@ import { Grade } from "./GradeEntity";
 import { Pc } from "./PcEntity";
 
 export interface Student {
-    name: String;
-    grades: Grade;
-    pc: Pc
+    name: String
+    id: String
+    grades: Grade[]
+    pcId: number
 }

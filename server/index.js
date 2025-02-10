@@ -8,16 +8,22 @@ app.use(express.json());
 // Datos simulados
 let students = [
     {
-        id: 1,
         name: "Juan Pérez",
-        grades: { subject: "Matemáticas", grade: 90 },
-        pc: { id: 101 }
+        id: "12693744D",
+        grades: [
+            { subject: "Matemáticas", grade: 9 }, 
+            { subject: "Lengua", grade: 7 }
+        ],
+        pcId: 101
     },
     {
-        id: 2,
         name: "María López",
-        grades: { subject: "Historia", grade: 85 },
-        pc: { id: 102 }
+        id: "65920289S",
+        grades: [
+            { subject: "Historia", grade: 8.5 },
+            { subject: "Dibujo Técnico", grade: 5 }
+        ],
+        pcId: 102
     }
 ];
 
