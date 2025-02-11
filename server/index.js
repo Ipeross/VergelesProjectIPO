@@ -12,7 +12,9 @@ let students = [
         id: "12693744D",
         grades: [
             { subject: "Matemáticas", grade: 9 }, 
-            { subject: "Lengua", grade: 7 }
+            { subject: "Lengua", grade: 7 },
+            { subject: "Historia", grade: 8.5 },
+            { subject: "Dibujo Técnico", grade: 5 }
         ],
         pcId: 101
     },
