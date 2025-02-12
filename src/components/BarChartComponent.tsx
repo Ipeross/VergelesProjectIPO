@@ -18,6 +18,8 @@ export default function BarChartComponent() {
     loadStudents();
   }, []);
 
+  
+  
   var gradeList: Grade[] | undefined = [];
 
 
@@ -28,7 +30,7 @@ export default function BarChartComponent() {
 
   const data = Array.from({ length: gradeList?.length ? gradeList.length : 0 }, (_, index) => ({
     subject: `${gradeList?.at(index)?.subject}`,
-    grades: 1
+    grades: Math.floor(Math.random() * 10) + 1
   }))
 
   return (
@@ -38,18 +40,27 @@ export default function BarChartComponent() {
           data={data}
           xKey="subject"
           yKeys={["grades"]}
-          domainPadding={{ left: 50, right: 50, top: 30 }}
+          domainPadding={{ left: 50, right: 50, top: 30}}
+          padding={{bottom: 50}}
           yAxis={[
             {
               yKeys: ["grades"],
-              tickValues: Array.from({ length: 10 }, (_, i) => i + 1),
-              domain: [1, 10],
+              tickValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+              tickCount: 10,
+              domain: [0.9, 10],
               labelColor: "#000000",
               lineColor: "gray",
               axisSide: "left",
-              font
+              font,
             }
           ]}
+          xAxis={{
+            font,
+            labelColor: "#000000",
+            labelOffset: 2,
+            labelRotate: 60,
+            axisSide: "bottom",
+          }}
           axisOptions={{
             font,
           }}
@@ -80,13 +91,14 @@ export default function BarChartComponent() {
 
 const styles = StyleSheet.create({
   wrapper: {
-    paddingTop: 200,
+    marginTop: height * 0.25,
+    
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
   container: {
-    width: width * 0.6,
-    height: height * 0.5,
+    width: width * 0.85,
+    height: height * 0.4,
   },
 });
