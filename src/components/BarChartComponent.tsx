@@ -8,28 +8,22 @@ const inter = require("../../fonts/inter-medium.ttf");
 
 const { width, height } = Dimensions.get('window');
 
-export default function BarChartComponent() {
+interface ChartInfo {
+  studentName: String
+  studentId: String
+  grades: Grade[]
+}
 
-  const { students, pcs, loadStudents, loadPcs } = useStore();
+export default function BarChartComponent({studentName, studentId, grades} : ChartInfo) {
 
   const font = useFont(inter, 10)
 
-  useEffect(() => {
-    loadStudents();
-  }, []);
+  if (!Array.isArray(grades)) {
 
-  
-  
-  var gradeList: Grade[] | undefined = [];
-
-
-  if (Array.isArray(students.at(0)?.grades)) {
-
-    gradeList = students.at(0)?.grades;
   }
 
-  const data = Array.from({ length: gradeList?.length ? gradeList.length : 0 }, (_, index) => ({
-    subject: `${gradeList?.at(index)?.subject}`,
+  const data = Array.from({ length: grades.length }, (_, index) => ({
+    subject: `${grades.at(index)?.subject}`,
     grades: Math.floor(Math.random() * 10) + 1
   }))
 

@@ -12,8 +12,8 @@ export default function PerformanceChartScreen({ route }: PerformanceChartScreen
   
   return (
     <View>
-      <Text>Rendimiento de {studentName}</Text>
-      <BarChartComponent />
+      <Text style={{marginBottom: 20}}>Rendimiento de {studentName}</Text>
+      <BarChartComponent studentName={studentName} studentId={studentId} grades={grades} />
     </View>
   );
 }
