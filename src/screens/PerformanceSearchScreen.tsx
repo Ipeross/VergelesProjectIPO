@@ -3,8 +3,10 @@ import * as React from 'react';
 import { Button, Searchbar } from 'react-native-paper';
 import { useEffect, useState } from "react";
 import { useStore } from "../store/store";
+import { useNavigation } from "@react-navigation/native";
 
 export default function PerformanceSearchScreen() {
+    const navigation = useNavigation();
     const { students, pcs, loadStudents, loadPcs } = useStore();
 
     useEffect(() => {
@@ -42,7 +44,7 @@ export default function PerformanceSearchScreen() {
                 data={filteredData}
                 keyExtractor={(item, index) => index.toString()}
                 renderItem={({ item }) => (
-                    <Button style={{ margin: 10 }} mode="outlined" onPress={() => console.log('Pressed')}>
+                    <Button style={{ margin: 10 }} mode="outlined" onPress={() => navigation.navigate('PerformanceChart')}>
                         {item}
                     </Button>
 
