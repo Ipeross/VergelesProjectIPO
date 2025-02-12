@@ -14,7 +14,9 @@ let students = [
             { subject: "Matemáticas", grade: 9 }, 
             { subject: "Lengua", grade: 7 },
             { subject: "Historia", grade: 8.5 },
-            { subject: "Dibujo Técnico", grade: 5 }
+            { subject: "Dibujo Técnico", grade: 5 },
+            { subject: "BlibBlab", grade: 2 },
+            { subject: "Dibujo Artistico", grade: 5 },
         ],
         pcId: 101
     },
@@ -25,7 +27,6 @@ let students = [
             { subject: "Historia", grade: 8.5 },
             { subject: "Dibujo Técnico", grade: 5 }
         ],
-        pcId: 102
     }
 ];
 
