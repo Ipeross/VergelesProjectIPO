@@ -14,18 +14,17 @@ interface ChartInfo {
   grades: Grade[]
 }
 
-export default function BarChartComponent({studentName, studentId, grades} : ChartInfo) {
+export default function BarChartComponent({ studentName, studentId, grades }: ChartInfo) {
 
   const font = useFont(inter, 10)
 
-  if (!Array.isArray(grades)) {
+  const data = grades.map((grade) => ({
+      subject: `${grade.subject}`,
+      grades: grade.grade,
+      //grades: Math.floor(Math.random() * 10) + 1
+    }));
 
-  }
-
-  const data = Array.from({ length: grades.length }, (_, index) => ({
-    subject: `${grades.at(index)?.subject}`,
-    grades: Math.floor(Math.random() * 10) + 1
-  }))
+  console.log("Datos para el gráfico:", data);
 
   return (
     <View style={styles.wrapper}>
@@ -34,8 +33,8 @@ export default function BarChartComponent({studentName, studentId, grades} : Cha
           data={data}
           xKey="subject"
           yKeys={["grades"]}
-          domainPadding={{ left: 50, right: 50, top: 30}}
-          padding={{bottom: 50}}
+          domainPadding={{ left: 50, right: 50, top: 30 }}
+          padding={{ bottom: 50 }}
           yAxis={[
             {
               yKeys: ["grades"],
@@ -54,6 +53,7 @@ export default function BarChartComponent({studentName, studentId, grades} : Cha
             labelOffset: 2,
             labelRotate: 60,
             axisSide: "bottom",
+            tickCount: data.length -1,
           }}
           axisOptions={{
             font,
@@ -61,12 +61,17 @@ export default function BarChartComponent({studentName, studentId, grades} : Cha
         >
           {({ points, chartBounds }) => (
             <Bar
-              barWidth={15}
+              barWidth={Math.max(15, 40 - data.length * 5)}
               chartBounds={chartBounds}
               points={points.grades}
               roundedCorners={{
                 topLeft: 5,
                 topRight: 5,
+              }}
+              labels={{
+                position: "top", // Muestra la nota arriba de la barra
+                font, // Usa la fuente cargada
+                color: "#000", // Color del texto
               }}
             >
               <LinearGradient
@@ -86,7 +91,7 @@ export default function BarChartComponent({studentName, studentId, grades} : Cha
 const styles = StyleSheet.create({
   wrapper: {
     marginTop: height * 0.25,
-    
+
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
