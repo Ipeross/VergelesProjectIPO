@@ -5,6 +5,7 @@ import { useStore } from "../store/store";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { PerformanceStackParamList } from "../types/navigation";
 import { Student } from "../entities/StudentEntity";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 
 type PerformanceSearchScreenProps = {
@@ -39,7 +40,7 @@ export default function PerformanceSearchScreen({ navigation }: PerformanceSearc
   }, [students]);
 
   return (
-    <View>
+    <SafeAreaView style={{ flex: 1 }}>
       <Text style={{ fontSize: 17, padding: 20 }}>
         Buscar alumno por nombre:
       </Text>
@@ -54,7 +55,7 @@ export default function PerformanceSearchScreen({ navigation }: PerformanceSearc
         keyExtractor={(student) => student.id.toString()}
         renderItem={({ item: student }) => (
           <Button
-            style={{ margin: 10 }}
+            style={{ margin: 10, borderRadius: 5}}
             mode="outlined"
             onPress={() => {
               navigation.navigate('PerformanceChart', {
@@ -68,6 +69,6 @@ export default function PerformanceSearchScreen({ navigation }: PerformanceSearc
           </Button>
         )}
       />
-    </View>
+    </SafeAreaView>
   );
 }

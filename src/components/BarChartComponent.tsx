@@ -1,8 +1,6 @@
 import { Dimensions, StyleSheet, View } from "react-native";
 import { Bar, CartesianChart } from "victory-native"
 import { LinearGradient, useFont, vec } from "@shopify/react-native-skia";
-import { useStore } from "../store/store";
-import { useEffect } from "react";
 import { Grade } from "../entities/GradeEntity";
 const inter = require("../../fonts/inter-medium.ttf");
 
@@ -21,7 +19,6 @@ export default function BarChartComponent({ studentName, studentId, grades }: Ch
   const data = grades.map((grade) => ({
       subject: `${grade.subject}`,
       grades: grade.grade,
-      //grades: Math.floor(Math.random() * 10) + 1
     }));
 
   console.log("Datos para el gráfico:", data);
@@ -69,9 +66,8 @@ export default function BarChartComponent({ studentName, studentId, grades }: Ch
                 topRight: 5,
               }}
               labels={{
-                position: "top", // Muestra la nota arriba de la barra
-                font, // Usa la fuente cargada
-                color: "#000", // Color del texto
+                position: "top",
+                font,
               }}
             >
               <LinearGradient
