@@ -1,4 +1,4 @@
-# VergelesProject IPO 📊
+# VergelesProject IPO (Vergeles EduTrack) 📱
 
 ## Descripción
 
@@ -13,7 +13,7 @@ Proyecto para aplicación del centro IES Zaidin Vergeles. Permite monitorear las
 - **React Navigation**: Para la navegación entre pantallas. TabBar principal de HomeScreen y ChartScreen y Stack Screen para la navegación dentro del Chart y su Buscador.
 - **React Native Paper**: Uso de componentes para la mejora de apariencia de la aplicación.
 - **Hooks de React**: Uso de hooks como useFocusEffect, useCallback para un fondo que cambia de color de manera eficiente y no en segundo plano.
-- 
+  
 ## Funcionalidad ⚡
 
 - Consta de 2 pantallas principales; HomeScreen y el "PerformanceScreen" (Realmente PerformanceSearchScreen).
@@ -24,6 +24,7 @@ Proyecto para aplicación del centro IES Zaidin Vergeles. Permite monitorear las
 - El chart es un componente reutilizable que obtiene la información de las notas de cada alumno, y se modifica segun los datos.
 - Utilizo una store de Zustand para manejar un contexto con la información de los alumnos.
 - Clase ApiService para las peticiones a la API REST. Solo se utiliza el getStudents aunque hay otro metodo getPcs para sus equipos informaticos.
+
 
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
