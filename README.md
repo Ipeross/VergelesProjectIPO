@@ -25,6 +25,54 @@ Proyecto para aplicación del centro IES Zaidin Vergeles. Permite monitorear las
 - Utilizo una store de Zustand para manejar un contexto con la información de los alumnos.
 - Clase ApiService para las peticiones a la API REST. Solo se utiliza el getStudents aunque hay otro metodo getPcs para sus equipos informaticos.
 
+# Rubrica 🖊
+
+---
+
+## **1. Creación de Componentes Adaptados a la Aplicación (2 puntos)**  
+**--> BarChartComponent, componente reutilizable del cual gira entorno la aplicación ya que se trata de una aplicacion de monitorización de datos de alumnos**
+
+- **(1 pt)** Implementación de componentes reutilizables y modulares.  
+- **(1 pt)** Adaptación de los componentes a los requerimientos específicos de la aplicación.  
+
+---
+
+## **2. Diseño del Menú y Gestión entre Pantallas (2 puntos)**  
+**--> Uso de React Navigation para la realización de un TabBar (HomeScreen y PerformanceSearchScreen) y StackScreen (PerformanceSearchScreen y PerformanceChartScreen)**
+
+- **(1 pt)** Creación de un menú intuitivo y funcional.  
+- **(1 pt)** Implementación de navegación fluida entre pantallas.
+
+---
+
+## **3. Uso de Datos Externos (2 puntos)**
+
+- **(1 pt)** Integración correcta de datos externos en la aplicación.  
+  **--> Uso de fetch para hacer petición a la API REST, clase ApiService y entidades (interfaces con las respuestas esperadas)**  
+- **(1 pt)** Manejo eficiente de la asincronía y errores en la carga de datos.  
+  **--> Clase HttpError en caso de error de la promesa y control de esto posteriormente en la store.**
+
+---
+
+## **4. Creación de Componentes Dinámicos (2 puntos)**
+
+- **(1 pt)** Implementación de componentes que se adapten a los datos recibidos.  
+  **--> BarChartComponent modifica el tamaño de las barras y el texto según los datos recibidos.**  
+- **(1 pt)** Correcta actualización de los componentes al recibir nueva información.  
+  **--> Se puede navegar entre gráficas de alumnos, sin problemas de carga, actualizándose el componente a cada alumno y sus datos.**
+
+---
+
+## **5. Uso de Contextos Definidos (2 puntos)**
+
+- **(1 pt)** Aplicación de los contextos desarrollados en el curso.  
+  **--> Uso de la store de Zustand para manejar el contexto y centralizar los datos de los alumnos.**  
+- **(1 pt)** Implementación adecuada de proveedores y consumidores de contexto.  
+  **--> Ya que la store de Zustand se comporta como un hook no es necesario proveedor y se consume llamando al hook. (No estoy seguro si es esto a lo que se refiere)**
+
+---
+
+
 
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
