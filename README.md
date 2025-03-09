@@ -1,3 +1,31 @@
+# VergelesProject IPO 📊
+
+## Descripción
+
+Proyecto para aplicación del centro IES Zaidin Vergeles. Permite monitorear las notas de los alumnos del centro en formato de gráfico de barras.
+
+## Tecnologías Utilizadas
+
+- **React Native**: Como Framework de la aplicación para desarrollar interfaces de usuario que se rendericen de forma nativa.
+- **Node.js**: Para hacer la prueba de extracción de datos, simulando una base de datos.
+- **Vitory Native**: Para la creación de las gráficas de desempeño de cada alumno.
+- **Zustand**: Para la gestión de contexto de la aplicación de manera eficiente, permitiendo un manejo centralizado de la información de cada alumno.
+- **React Navigation**: Para la navegación entre pantallas. TabBar principal de HomeScreen y ChartScreen y Stack Screen para la navegación dentro del Chart y su Buscador.
+- **React Native Paper**: Uso de componentes para la mejora de apariencia de la aplicación.
+- **Hooks de React**: Uso de hooks como useFocusEffect, useCallback para un fondo que cambia de color de manera eficiente y no en segundo plano.
+- 
+## Funcionalidad ⚡
+
+- Consta de 2 pantallas principales; HomeScreen y el "PerformanceScreen" (Realmente PerformanceSearchScreen).
+- HomeScreen contiene el título de la aplicación y un Card con una imagen del centro. (Facilmente escalable ya que se puede añadir iformación de los alumnos gracias a la store)
+- Fondo animado que cambia de color. Colores, velocidad, "patron de movimiento" facilmente modificable en el código.
+- En el Tab del PerformanceScreen encontramos un menú de busqueda(PerformanceSearchScreen), con los alumnos de la REST API. Filtra por nombre los alumnos. (Se podría modificar para que busque por ID por ejemplo)
+- Esta screen forma parte de una navegación 'anidada' en la que se puede acceder a un gráfico con las notas de cada alumno(PermormanceChartScreen) clicando sobre su nombre.
+- El chart es un componente reutilizable que obtiene la información de las notas de cada alumno, y se modifica segun los datos.
+- Utilizo una store de Zustand para manejar un contexto con la información de los alumnos.
+- Clase ApiService para las peticiones a la API REST. Solo se utiliza el getStudents aunque hay otro metodo getPcs para sus equipos informaticos.
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
